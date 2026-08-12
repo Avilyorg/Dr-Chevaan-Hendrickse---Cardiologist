@@ -1,0 +1,20 @@
+# Per-site working files. The repo is the reusable tool; sites are worked on elsewhere
+# (see README "Where to run it"). These patterns only matter if someone runs in-repo anyway.
+config.json
+_fetched/
+output/
+sites/
+archives/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
