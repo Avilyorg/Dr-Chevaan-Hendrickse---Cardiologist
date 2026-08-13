@@ -1,0 +1,121 @@
+<!--
+  Avily "Designed by" credit — fragment that drops INTO the site's
+  existing <footer>. Pick the variant matching the client's specialty
+  and paste it alongside the site's own copyright/legal text.
+
+  Visual style (background, padding, font-size, text-align, colour,
+  link colour) inherits from the site's footer. Only inline-logo
+  sizing is set by the <style> block below.
+
+  The copyright year auto-updates client-side — no rebuild needed to
+  roll over to a new year. The <span class="current-year"> is filled
+  by the small <script> block below.
+
+  Paste the <style> AND <script> blocks ONCE into the site's <head>
+  (or copy their contents into css/styles.css and js/main.js).
+
+  Available specialties:
+    - medical         — general medical practices
+    - dental          — dentists, orthodontists
+    - gynaecology     — OB/GYN, women's health
+    - psychology      — clinical/counselling psychology, mental health
+    - optometry       — eyecare practices
+    - physiotherapy   — physio, biokinetics, sports rehab
+    - paediatrician   — paediatricians, child healthcare
+    - veterinary      — vets, animal hospitals
+
+  Placeholder {{site.business_name}} is substituted at launch.
+-->
+
+<style>
+  .avily-credit .avily-link { text-decoration: none; }
+  .avily-credit .avily-link:hover { text-decoration: underline; }
+  .avily-credit img {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+</style>
+
+<script>
+  // Keep the copyright year fresh without re-deploying.
+  document.addEventListener("DOMContentLoaded", () => {
+    const year = new Date().getFullYear();
+    document.querySelectorAll(".avily-credit .current-year").forEach((el) => {
+      el.textContent = year;
+    });
+  });
+</script>
+
+
+<!-- MEDICAL — general medical practices -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/medical-website-design" target="_blank" rel="noopener">Medical Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- DENTAL — dentists, orthodontists -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/dental-web-design" target="_blank" rel="noopener">Dental Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- GYNAECOLOGY — OB/GYN, women's health -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/gynaecology-web-design" target="_blank" rel="noopener">Gynaecology Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- PSYCHOLOGY — clinical/counselling psychology, mental health -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/psychology-web-design" target="_blank" rel="noopener">Psychology Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- OPTOMETRY — eyecare practices -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/optometry-web-design" target="_blank" rel="noopener">Optometry Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- PHYSIOTHERAPY — physio, biokinetics, sports rehab -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/physiotherapy-web-design" target="_blank" rel="noopener">Physiotherapy Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- PAEDIATRICIAN — paediatricians, child healthcare -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/paediatrician-web-design" target="_blank" rel="noopener">Paediatric Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>
+
+
+<!-- VETERINARY — vets, animal hospitals -->
+<p class="avily-credit">
+  Copyright &copy; <span class="current-year"></span> {{site.business_name}}. All Rights Reserved.
+  <a class="avily-link" href="https://www.avily.co.za/veterinary-web-design" target="_blank" rel="noopener">Veterinary Website Design</a>
+  by
+  <img src="https://cdn.avily.com/avily-logo-small.png" alt="Avily" decoding="async" loading="lazy">
+</p>

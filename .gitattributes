@@ -1,3 +1,21 @@
-# run.sh must stay LF or it will not execute on POSIX after a Windows checkout.
+# Normalize line endings so Windows and macOS/Linux contributors don't churn
+# whole-file diffs against each other. Stored as LF in the repo; Git checks out
+# native on Windows.
 * text=auto eol=lf
-*.ps1 text eol=crlf
+
+# The kit emits these into client sites — keep them LF everywhere.
+*.js   text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+
+# Binary — never touch.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.woff  binary
+*.woff2 binary

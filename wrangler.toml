@@ -1,0 +1,28 @@
+name = "dr-chevaan-hendrickse---cardiologist"
+main = "src/worker.js"
+compatibility_date = "2024-05-15"
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+not_found_handling = "404-page"
+run_worker_first = true
+
+# Custom domain routes — DELIBERATELY DISABLED until the client approves the
+# site. With no [[routes]] and workers_dev unset, `wrangler deploy` publishes
+# only to the workers.dev subdomain (dr-chevaan-hendrickse---cardiologist.apps7459.workers.dev)
+# and leaves drchevaanhendrickse.co.za's live WordPress site untouched. Once
+# approved, uncomment both blocks below and redeploy to cut over.
+#
+# [[routes]]
+# pattern = "drchevaanhendrickse.co.za"
+# custom_domain = true
+#
+# [[routes]]
+# pattern = "www.drchevaanhendrickse.co.za"
+# custom_domain = true
+
+[[secrets_store_secrets]]
+binding = "SENDGRID_API_KEY"
+store_id = "0fbc4b9b538940cabc4dc3b766687b10"
+secret_name = "SENDGRID_API_KEY"

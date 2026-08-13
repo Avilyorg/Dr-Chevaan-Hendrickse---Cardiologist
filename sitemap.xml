@@ -1,2 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>wp-sitemap-posts-post-1.xml</loc></sitemap><sitemap><loc>wp-sitemap-posts-page-1.xml</loc></sitemap><sitemap><loc>wp-sitemap-taxonomies-category-1.xml</loc></sitemap><sitemap><loc>wp-sitemap-users-1.xml</loc></sitemap></sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/practice-image.jpg</image:loc>
+      <image:title>Your Southern Suburbs Cardiologist at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/about-us.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/Dr-Handrickse-about-practice-2.jpg</image:loc>
+      <image:title>About Us at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/our-treatments.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/cardiac-pacing.jpg</image:loc>
+      <image:title>Our Treatments at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/our-treatments-cardiac-pacing.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/cardiac-pacing.jpg</image:loc>
+      <image:title>Cardiac Pacing at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/our-treatments-percutaneous-coronary-intervention-stent.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/stent.jpg</image:loc>
+      <image:title>Percutaneous Coronary Intervention (Stent) at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/our-treatments-valvular-intervention.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/valvular-intervention.jpg</image:loc>
+      <image:title>Valvular Intervention at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/patient-resource-hub.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/research.jpg</image:loc>
+      <image:title>Patient Resource Hub at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/online-booking.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/mapPin-blue.png</image:loc>
+      <image:title>Online Booking at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/contact-us.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/mapPin-blue.png</image:loc>
+      <image:title>Contact Us at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/privacy-policy.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/dr-chevaan-hendrickse-logo.png</image:loc>
+      <image:title>Privacy Policy at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://drchevaanhendrickse.co.za/terms-and-conditions.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://drchevaanhendrickse.co.za/images/dr-chevaan-hendrickse-logo.png</image:loc>
+      <image:title>Terms &amp; Conditions at Dr Chevaan Hendrickse</image:title>
+    </image:image>
+  </url>
+</urlset>

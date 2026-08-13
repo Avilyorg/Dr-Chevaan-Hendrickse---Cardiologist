@@ -1,0 +1,9 @@
+*.md
+!README.md
+.claude/
+.env
+report.json
+.wrangler/
+node_modules/
+package-lock.json
+site.config.yaml

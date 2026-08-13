@@ -1,0 +1,78 @@
+{
+  "Dr-Handrickse-about-hero-banner.jpg": {
+    "width": 1200,
+    "height": 721,
+    "fallback": "images/optimized/Dr-Handrickse-about-hero-banner.jpg",
+    "webp": "images/optimized/Dr-Handrickse-about-hero-banner.webp",
+    "variants": [
+      {
+        "width": 480,
+        "file": "images/optimized/Dr-Handrickse-about-hero-banner-480.webp"
+      },
+      {
+        "width": 800,
+        "file": "images/optimized/Dr-Handrickse-about-hero-banner-800.webp"
+      }
+    ]
+  },
+  "Dr-Handrickse-contact.jpg": {
+    "width": 1200,
+    "height": 739,
+    "fallback": "images/optimized/Dr-Handrickse-contact.jpg",
+    "webp": "images/optimized/Dr-Handrickse-contact.webp",
+    "variants": [
+      {
+        "width": 480,
+        "file": "images/optimized/Dr-Handrickse-contact-480.webp"
+      },
+      {
+        "width": 800,
+        "file": "images/optimized/Dr-Handrickse-contact-800.webp"
+      }
+    ]
+  },
+  "Hendrickse-home.jpg": {
+    "width": 900,
+    "height": 600,
+    "fallback": "images/optimized/Hendrickse-home.jpg",
+    "webp": "images/optimized/Hendrickse-home.webp",
+    "variants": [
+      {
+        "width": 480,
+        "file": "images/optimized/Hendrickse-home-480.webp"
+      },
+      {
+        "width": 800,
+        "file": "images/optimized/Hendrickse-home-800.webp"
+      }
+    ]
+  },
+  "home-hero-banner.jpg": {
+    "width": 1200,
+    "height": 743,
+    "fallback": "images/optimized/home-hero-banner.jpg",
+    "webp": "images/optimized/home-hero-banner.webp",
+    "variants": [
+      {
+        "width": 480,
+        "file": "images/optimized/home-hero-banner-480.webp"
+      },
+      {
+        "width": 800,
+        "file": "images/optimized/home-hero-banner-800.webp"
+      }
+    ]
+  },
+  "practice-image-2.jpg": {
+    "width": 700,
+    "height": 467,
+    "fallback": "images/optimized/practice-image-2.jpg",
+    "webp": "images/optimized/practice-image-2.webp",
+    "variants": [
+      {
+        "width": 480,
+        "file": "images/optimized/practice-image-2-480.webp"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+
+Sitemap: https://drchevaanhendrickse.co.za/sitemap.xml

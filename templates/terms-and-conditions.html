@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{site.gtm_id}}');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions | {{site.business_name}}</title>
+  <meta name="description" content="Terms and Conditions for the {{site.business_name}} website. Read the conditions that apply when you use this website.">
+
+  {{< inject-seo.js fills the rest of the head from config >}}
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.gtm_id}}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{< inject-seo.js prepends the site nav here >}}
+
+  <!-- Page Heading -->
+  <section class="contact-heading">
+    <div class="container">
+      <h1>Terms &amp; Conditions</h1>
+      <p>The conditions that apply when you use the {{site.business_name}} website.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section style="padding: 60px 20px;">
+    <div style="max-width: 860px; margin: 0 auto; line-height: 1.8;">
+
+      <h2 style="margin: 0 0 16px;">Purpose of the Website</h2>
+      <p>
+        The primary purpose of this website is to present relevant information about
+        {{site.business_name}} to existing and prospective patients/clients and to the general
+        public. The content of the website is for general information only and should not be
+        interpreted as professional advice. Always consult a qualified practitioner for advice
+        tailored to your specific circumstances.
+      </p>
+
+      <h2 style="margin: 48px 0 16px;">Restrictions of Use</h2>
+      <p>
+        By continuing to make use of the website, you agree to these Website Terms and Conditions.
+      </p>
+      <p>
+        Elements of the website may be replicated and distributed on a limited basis for
+        non-commercial purposes only. These materials are for personal use only. Any replication or
+        redistribution for commercial purposes or profit of any kind requires our prior written
+        permission.
+      </p>
+      <p>By using the website, you agree that you will not, and you will not allow third parties on your account to:</p>
+      <ul style="margin: 12px 0 16px 24px;">
+        <li>make and share copies of the website;</li>
+        <li>attempt to duplicate, reproduce, change, modify, reverse engineer, disassemble, decompile, transfer, exchange or translate the website; or</li>
+        <li>create secondary works of the website of any kind whatsoever.</li>
+      </ul>
+      <p>
+        You recognise that the terms of the arrangement with your Internet Service Provider will
+        apply when using the website. You may incur additional costs from that provider for network
+        access or connection services while accessing the website or any third-party connections or
+        services. You accept liability for any such costs.
+      </p>
+      <p>
+        If you do not own the device used to access the website, you are presumed to have received
+        explicit permission from the owner to access and use it.
+      </p>
+
+      <h2 style="margin: 48px 0 16px;">Intellectual Property</h2>
+      <p>
+        All trademarks, database rights, copyright and other intellectual property rights of any
+        nature on this website — as well as the underlying code and content made available on the
+        website (including graphics, text, logos and images) — are owned directly by
+        {{site.business_name}} or by our licensors, unless expressly stated otherwise.
+      </p>
+      <p>
+        You do not acquire any copyright, trademark, database or other intellectual property rights
+        of any nature, nor any licence, by using the website.
+      </p>
+      <p>
+        You are not granted any right or licence to use any of our intellectual property unless you
+        obtain our prior written permission.
+      </p>
+
+      {{< if site.schema.type is medical >}}
+      <h2 style="margin: 48px 0 16px;">No Doctor–Patient Relationship</h2>
+      <p>
+        Use of this website does not create a doctor–patient relationship between you and
+        {{site.business_name}}. A clinical relationship is established only after a formal
+        consultation has taken place at our practice.
+      </p>
+      {{< /if >}}
+
+      <h2 style="margin: 48px 0 16px;">External Links</h2>
+      <p>
+        The website may contain links to third-party websites. We provide these links for
+        convenience only and do not endorse, and are not responsible for, the content or practices
+        of any third-party site.
+      </p>
+
+      <h2 style="margin: 48px 0 16px;">Limitation of Liability</h2>
+      <p>
+        We make reasonable efforts to keep the information on this website accurate and current,
+        but we do not warrant its completeness, accuracy or fitness for any particular purpose. To
+        the fullest extent permitted by applicable {{legal.jurisdiction_full}} law, we exclude all
+        liability for any direct, indirect, incidental, consequential or special loss arising from
+        your use of, or inability to use, the website.
+      </p>
+
+      <h2 style="margin: 48px 0 16px;">Breach</h2>
+      <p>
+        Should you breach these Website Terms and Conditions, {{site.business_name}} retains the
+        right to claim damages of whatsoever nature, including special, incidental, consequential
+        or indirect damages. We also retain the right to claim loss of business and profits and to
+        recover any legal costs on a scale as between attorney and client.
+      </p>
+
+      <h2 style="margin: 48px 0 16px;">Governing Law</h2>
+      <p>
+        These Terms and Conditions are governed by the laws of {{legal.governing_law_jurisdiction}}.
+        Any dispute arising in connection with the website or these terms shall be subject to the
+        exclusive jurisdiction of the courts of {{legal.governing_law_jurisdiction}}.
+      </p>
+
+      <h2 style="margin: 48px 0 16px;">Contact</h2>
+      <p>
+        For questions about these Terms and Conditions, contact us at
+        <a href="mailto:{{site.contact.email}}" style="color: {{site.brand_color}};">{{site.contact.email}}</a>
+        or <a href="tel:{{site.contact.phone_e164}}" style="color: {{site.brand_color}};">{{site.contact.phone_display}}</a>.
+      </p>
+
+    </div>
+  </section>
+
+  {{< inject-seo.js appends the site footer + nav-toggle script >}}
+</body>
+</html>

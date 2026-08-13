@@ -1,20 +1,25 @@
-# Per-site working files. The repo is the reusable tool; sites are worked on elsewhere
-# (see README "Where to run it"). These patterns only matter if someone runs in-repo anyway.
-config.json
-_fetched/
-output/
-sites/
-archives/
-*.zip
+# This is the KIT's own ignore file.
+# Not to be confused with .gitignore.template, which is copied into generated
+# site repos (and deliberately ignores *.md). Here the .md docs are the product.
 
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
+node_modules/
 
-# Editors / OS
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# A real site config must never land in the kit — only the example is tracked
+site.config.yaml
+
+# Script + tool output
+report.json
+.wrangler/
+
+# Editor / agent / OS
+.claude/
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+desktop.ini

@@ -48,3 +48,12 @@
 		$( 'body' ).addClass( browser_class );
 	});
 })(jQuery);
+
+
+// Avily "designed by" credit — keeps the copyright year fresh client-side.
+document.addEventListener("DOMContentLoaded", () => {
+  const year = new Date().getFullYear();
+  document.querySelectorAll(".avily-credit .current-year").forEach((el) => {
+    el.textContent = year;
+  });
+});

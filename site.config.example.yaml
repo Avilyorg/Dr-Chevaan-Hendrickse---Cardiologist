@@ -1,0 +1,151 @@
+# Cloudflare Static Site Launch — config
+#
+# Copy to `site.config.yaml` (gitignored) and edit per project.
+# All `scripts/*.js` and the launch runbook read from this single source of truth.
+#
+# Every value below is a PLACEHOLDER. `scripts/preflight.js` fails (or warns) on any
+# that you leave unchanged — never ship a site with another client's GTM container,
+# reCAPTCHA key or phone number, so don't copy those from a previous project.
+
+# === Site identity ===
+site:
+  worker_name: dr-chevaan-hendrickse---cardiologist             # Cloudflare Worker name (lowercase, dashes)
+  domain: drchevaanhendrickse.co.za                # apex, no scheme, no www
+  canonical_host: apex                       # apex | www (the other is 301-redirected)
+  business_name: Dr Chevaan Hendrickse
+  tagline: Your Southern Suburbs Cardiologist   # used in <title> suffix on most pages
+  brand_color: "#29557c"                     # theme-color, manifest
+  logo: images/dr-chevaan-hendrickse-logo.png                      # path used in Organization JSON-LD logo + footer
+  # favicon: images/favicon-source.png       # optional — defaults to site.logo
+  stylesheet: css/style.min.css                 # main stylesheet (inject-seo.js preloads this)
+
+  contact:
+    email: reception@drhendrickse.co.za               # SendGrid delivers form submissions here
+    phone_e164: "+27216378218"               # E.164 — tel: links + JSON-LD
+    phone_display: "021 637 8218"
+    # whatsapp_e164: "+27110000000"          # optional — emits a WhatsApp ContactPoint
+
+  address:                                   # head office / main practice
+    street: "Syringa House, Life Kingsbury Hospital, Wilderness Rd, Claremont"
+    city: Cape Town
+    postal_code: "7708"                      # optional — emits PostalAddress.postalCode
+    country_iso: ZA                          # ISO 3166-1 alpha-2 — drives currency + privacy law
+    geo:                                     # extract from the site's Google Maps embed
+      latitude: -33.9862
+      longitude: 18.4662
+    google_maps_url: "https://maps.app.goo.gl/HcUncu8dip7Znn2YA"
+ 
+  schema:
+    type: Physician                # Dentist | MedicalClinic | MedicalSpa | DaySpa | Restaurant |
+                                       # LawFirm | Psychologist | VeterinaryCare | LocalBusiness | …
+                                       # Also picks the agency-credit specialty variant (qa-audit.js).
+    # secondary_types: [DiagnosticLab] # optional dual-typing
+    medical_specialty: [Cardiovascular]   # only when `type` is a medical type
+    price_range: "$$"                  # $ | $$ | $$$ | $$$$  (always quote — bare $$ is fine quoted)
+    payment_accepted: "Cash, Credit Card, EFT"
+    languages: [en]                    # availableLanguage
+    faq_container: [postcontent, content-wrap]   # class(es) extract-faqs.js scrapes for <h2>+<p>
+    hours:                             # 24h "HH:MM-HH:MM". Omit closed days.
+      mon: "08:00-17:00"
+      tue: "08:00-17:00"
+      wed: "08:00-17:00"
+      thu: "08:00-17:00"
+      fri: "08:00-17:00"
+
+  socials:                             # optional — every value becomes a sameAs[]
+    # facebook: https://www.facebook.com/example
+    # instagram: https://www.instagram.com/example
+    # linkedin: https://www.linkedin.com/company/example
+
+  images:
+    size_threshold_kb: 200             # optimize-images.js skips images already smaller than this.
+                                       # Lower it (e.g. 15) to optimize most content images too;
+                                       # ~1 KB icons gain nothing, so a small floor avoids churn.
+    skip:                              # optional — directories optimize-images.js skips entirely
+      []                               #   (repo-relative). Use for unreferenced assets, e.g.:
+      # - images/home/team             #   so they don't produce orphan optimized output.
+
+  agency_credit:                       # "designed by" credit enforced by verify-launch + qa-audit
+    required: true                     # set false to launch any project without an agency credit
+    match: "avily.co.za/"              # substring that must appear on indexable pages
+    deprecated: ["avily.azureedge.net"]  # substrings that must NOT appear (old/retired references)
+
+  recaptcha_site_key: "6Lfyi48UAAAAALdKAOKVWEXLfdfB1FrM3UoTfr_R"   # v3 SITE key (public) — rendered into js/ContactUs.js.
+                                             # Create the key pair at
+                                             # https://console.cloud.google.com/security/recaptcha
+  recaptcha_secret_name: "RECAPTCHA_SECRET"  # name of the WORKER SECRET holding the v3 SECRET key.
+                                             # Always added on the Worker itself: Workers → <worker_name>
+                                             # → Settings → Variables and Secrets → Add → type: Secret.
+                                             # NEVER in Secrets Store — so there is no store id for it.
+
+  sendgrid:
+    from_email: drchevaanhendrickse@secureform.co.za    # Avily shared sender
+    secrets_store_id: "0fbc4b9b538940cabc4dc3b766687b10"  # Avily account Secrets Store — a constant.
+                                             # Only change it if the Cloudflare account changes.
+                                             # This is the ONLY Secrets Store binding (SENDGRID_API_KEY).
+
+  gtm_id: GTM-P9GCF2V                  # this site's own GTM container — never reuse another client's
+  og_locale: en_ZA                     # IETF tag for og:locale
+  build_date: "2026-01-01"             # sitemap <lastmod> + Last-Modified (quote to keep it a string)
+
+# === Per-page table ===
+# One entry per HTML page. Slug "/" maps to index.html.
+# schema_role drives JSON-LD: home | about | contact | service | legal | thank_you | 404 | other
+#
+# The five entries below are illustrative — one per schema_role. For a real site run
+# `node scripts/scaffold-config.js` to generate this table from the existing HTML
+# (it scrapes each page's title/description and guesses schema_role), then paste it here.
+# 404.html and thank-you.html are generated by build-shell-pages.js and are NOT listed here.
+pages:
+  - slug: "/"
+    title: Your Southern Suburbs Cardiologist
+    description: "Your Southern Suburbs Cardiologist — interventional cardiology in Claremont, Cape Town, offering minimally invasive, catheter-based heart treatments."
+    schema_role: home
+
+  - slug: about-us.html
+    title: About Us
+    description: "Meet Dr Chevaan Hendrickse (MBChB UCT, FCP SA, Cert. Cardio) and the team behind his interventional cardiology practice in Claremont, Cape Town."
+    schema_role: about
+    person:                            # practitioner featured on this page → one Person JSON-LD node
+      name: Dr Chevaan Hendrickse
+      job_title: Interventional Cardiologist
+      portrait: images/Dr-Handricks-profile-image.jpg
+      alumni_of: University of Cape Town
+      # credentials:
+      #   - { authority: HPCSA, id: "REG-000" }   # no HPCSA/registration number found on the site — add if available
+      knows_about: [Cardiac Pacing, Percutaneous Coronary Intervention, Valvular Intervention]
+
+  - slug: our-treatments.html
+    title: Our Treatments
+    description: "Cutting-edge, minimally invasive cardiology treatments from Dr Chevaan Hendrickse — cardiac pacing, PCI/stents and valvular intervention."
+    schema_role: other               # overview/hub page with no <h2>+<p> FAQ content of its own — the three treatments below carry schema_role: service
+
+  - slug: our-treatments-cardiac-pacing.html
+    title: Cardiac Pacing
+    description: "Cardiac pacing with Dr Chevaan Hendrickse — pacemakers for irregular heart rhythms, fatigue and dizziness. Book a consultation in Cape Town."
+    schema_role: service
+
+  - slug: our-treatments-percutaneous-coronary-intervention-stent.html
+    title: Percutaneous Coronary Intervention (Stent)
+    description: "Percutaneous coronary intervention (stent) with Dr Chevaan Hendrickse — minimally invasive treatment for blocked coronary arteries in Cape Town."
+    schema_role: service
+
+  - slug: our-treatments-valvular-intervention.html
+    title: Valvular Intervention
+    description: "Valvular intervention with Dr Chevaan Hendrickse — minimally invasive heart valve repair and replacement in Claremont, Cape Town."
+    schema_role: service
+
+  - slug: patient-resource-hub.html
+    title: Patient Resource Hub
+    description: "Research, publications and practical information for patients of Dr Chevaan Hendrickse's cardiology practice at Life Kingsbury Hospital."
+    schema_role: other               # research/publications hub — no <h2>+<p> FAQ content, so not schema_role: service
+
+  - slug: online-booking.html
+    title: Online Booking
+    description: "Book an appointment online with Dr Chevaan Hendrickse's cardiology practice at Life Kingsbury Hospital, Claremont, Cape Town."
+    schema_role: other               # booking form page — no <h2>+<p> FAQ content, so not schema_role: service
+
+  - slug: contact-us.html
+    title: Contact Us
+    description: "Contact Dr Chevaan Hendrickse's cardiology practice at Life Kingsbury Hospital, Claremont — phone, email and enquiry form."
+    schema_role: contact

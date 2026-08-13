@@ -1,0 +1,25 @@
+{
+  "name": "cloudflare-launch-kit",
+  "version": "3.2.0",
+  "private": true,
+  "description": "Cloudflare Workers static-site launch kit — hardened worker, reCAPTCHA + SendGrid form, local-SEO JSON-LD, image pipeline, verify + QA gates",
+  "scripts": {
+    "preflight": "node scripts/preflight.js",
+    "launch": "node scripts/launch.js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "inject-seo": "node scripts/inject-seo.js",
+    "extract-faqs": "node scripts/extract-faqs.js",
+    "build-sitemap": "node scripts/build-sitemap.js",
+    "inject-pictures": "node scripts/inject-pictures.js",
+    "verify": "node scripts/verify-launch.js",
+    "check-forms": "node scripts/check-forms.js",
+    "qa": "node scripts/qa-audit.js",
+    "test": "node --test",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "sharp": "^0.33.5"
+  }
+}

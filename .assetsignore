@@ -1,0 +1,38 @@
+# Build / config — never serve to the public edge
+wrangler.toml
+wrangler.jsonc
+.assetsignore
+.gitignore
+.git/
+.github/
+.vscode/
+.idea/
+.editorconfig
+node_modules/
+package.json
+package-lock.json
+report.json
+
+# Documentation
+ENV_VARS_SETUP.md
+README.md
+*.md
+
+# Source + tooling — invisible to the public
+src/
+scripts/
+templates/
+
+# Config — YAML configs may carry secrets (recaptcha keys, store IDs, etc.)
+*.yaml
+*.yml
+site.config.yaml
+site.config.example.yaml
+
+# Design sources — large, never meant for the public edge (v3.1)
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xcf
+*.tiff

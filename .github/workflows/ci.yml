@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: test (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Unit tests
+        run: npm test
+
+      # The kit ships no site.config.yaml, so the build/verify scripts can't run
+      # here. preflight is the one gate that should fail loudly and predictably
+      # without a config — this asserts it still does (and never crashes instead).
+      - name: Preflight fails cleanly with no config
+        run: |
+          if npm run preflight --silent; then
+            echo "::error::preflight passed without a site.config.yaml — it should have failed"
+            exit 1
+          fi
+          echo "preflight correctly refused to run without a config"
