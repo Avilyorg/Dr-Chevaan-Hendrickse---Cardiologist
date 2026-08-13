@@ -257,7 +257,7 @@ async function handleForm(request, env, cors) {
       },
       body: JSON.stringify({
         personalizations: [
-          { to: [{ email: "reception@drhendrickse.co.za", name: "Dr Chevaan Hendrickse" }], subject: "Website Contact Request" },
+          { to: [{ email: "support@avily.co.za", name: "Dr Chevaan Hendrickse" }], subject: "Website Contact Request" },
         ],
         from: { email: "drchevaanhendrickse@secureform.co.za", name: username },
         reply_to: { email: emailaddress, name: username },
