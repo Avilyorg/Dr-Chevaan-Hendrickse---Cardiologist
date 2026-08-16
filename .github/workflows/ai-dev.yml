@@ -1,0 +1,41 @@
+# Per-client-repo shim — copy this file to:
+#   <client-repo>/.github/workflows/ai-dev.yml
+#
+# It calls the reusable workflows in Avilyorg/.github so all the runner logic
+# lives in one place. Update Avilyorg/.github to update every client at once.
+#
+# No edits needed per-repo — every Avilyorg site repo gets the SAME content.
+
+name: AI Dev
+
+on:
+  repository_dispatch:
+    types: [website-update, website-promote]
+
+jobs:
+  update:
+    if: ${{ github.event.action == 'website-update' }}
+    # Reusable workflow needs contents:write to push the per-task branch.
+    # Granting explicitly here so this shim works regardless of the org-wide
+    # default workflow-permissions setting.
+    permissions:
+      contents: write
+    uses: Avilyorg/.github/.github/workflows/ai-update.yml@main
+    with:
+      run_id:      ${{ github.event.client_payload.runId }}
+      model:       ${{ github.event.client_payload.model }}
+      task_gid:    ${{ github.event.client_payload.taskGid }}
+      worker_name: ${{ github.event.client_payload.workerName }}
+    secrets: inherit
+
+  promote:
+    if: ${{ github.event.action == 'website-promote' }}
+    # Reusable workflow needs contents:write to merge the task branch into main.
+    permissions:
+      contents: write
+    uses: Avilyorg/.github/.github/workflows/ai-promote.yml@main
+    with:
+      run_id:      ${{ github.event.client_payload.runId }}
+      task_gid:    ${{ github.event.client_payload.taskGid }}
+      worker_name: ${{ github.event.client_payload.workerName }}
+    secrets: inherit
