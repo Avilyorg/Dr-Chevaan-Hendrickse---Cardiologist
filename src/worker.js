@@ -87,13 +87,13 @@ const SECURITY_HEADERS = {
   // with real GTM-breakage risk, so it is intentionally left out of the kit.
   "Content-Security-Policy": [
     "default-src 'self'",
-    "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.googletagmanager.com https://static.cloudflareinsights.com 'unsafe-inline'",
-    "frame-src https://www.google.com https://maps.google.com https://www.googletagmanager.com https://td.doubleclick.net",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.googletagmanager.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net https://pagead2.googlesyndication.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com 'unsafe-inline'",
+    "frame-src https://www.google.com https://maps.google.com https://www.googletagmanager.com https://td.doubleclick.net https://bid.g.doubleclick.net",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.googletagmanager.com https://*.google.com",
     "font-src 'self' https://fonts.gstatic.com data:",
     "img-src 'self' data: https:",
     "media-src 'self'",
-    "connect-src 'self' https://www.google.com/recaptcha/ https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://static.cloudflareinsights.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://td.doubleclick.net https://www.googleadservices.com",
+    "connect-src 'self' https://www.google.com https://google.com https://*.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.doubleclick.net https://ad.doubleclick.net https://td.doubleclick.net https://stats.g.doubleclick.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.google.com/recaptcha/",
     "form-action 'self'",
     "frame-ancestors 'self'",
     "base-uri 'self'",
